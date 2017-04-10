@@ -586,7 +586,8 @@ var overtempAlert AlertName = "OVERTEMP"
 var overtempRule RuleFunc = func(stub shim.ChaincodeStubInterface, asset *Asset) error {
 	temp, found := GetObjectAsNumber(asset.State, "asset.temperature")
 	if found {
-		if temp > 0 {
+//		if temp > 0 {
+		if temp > 45 {
 			RaiseAlert(asset, overtempAlert)
 		} else {
 			ClearAlert(asset, overtempAlert)
