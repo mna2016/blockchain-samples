@@ -64,7 +64,7 @@ var stub1 shim.ChaincodeStubInterface
 var args1 []string
 var inject1 []QPropNV
 var caller1 string
-
+var c1 *AssetClass
 
 func (c AssetClass) String() string {
 	return fmt.Sprintf("CLS=%s | PRF=%s | ID=%s", c.Name, c.Prefix, c.AssetIDPath)
@@ -221,7 +221,7 @@ func (c *AssetClass) ReplaceAsset(stub shim.ChaincodeStubInterface, args []strin
 
 // UpdateAsset updates an asset and stores it in world state
 func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string, caller string, inject []QPropNV) ([]byte, error) {
-
+	c1 = c
 	stub1 = stub
 	args1 = args
 	inject1 = inject
@@ -603,7 +603,7 @@ var overtempRule RuleFunc = func(stub shim.ChaincodeStubInterface, asset *Asset)
 		if temp > 45 {
 			RaiseAlert(asset, overtempAlert)
 			//create a new block with alert
-			asset.UpdateAsset(stub1, args1, caller1, inject1)
+			c1.UpdateAsset(stub1, args1, caller1, inject1)
 		} else {
 			ClearAlert(asset, overtempAlert)
 		}
