@@ -212,7 +212,7 @@ func (c *AssetClass) ReplaceAsset(stub shim.ChaincodeStubInterface, args []strin
 	return a.PUTAsset(stub, caller, inject)
 }
 
-var stub1, args1, inject1, caller1;
+var stub1, args1, inject1, caller1
 
 // UpdateAsset updates an asset and stores it in world state
 func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string, caller string, inject []QPropNV) ([]byte, error) {
