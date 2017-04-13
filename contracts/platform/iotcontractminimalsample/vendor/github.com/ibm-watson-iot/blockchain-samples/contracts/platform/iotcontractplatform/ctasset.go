@@ -60,10 +60,10 @@ func (c AssetClass) NewAsset() Asset {
 // AllAssetClass is the class of all assets
 var AllAssetClass = AssetClass{"All", "", ""}
 
-var stub1
-var args1
-var inject1
-var caller1 
+var stub1 = nil
+var args1 = nil
+var inject1 = nil
+var caller1 = nil
 
 
 func (c AssetClass) String() string {
