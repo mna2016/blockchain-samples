@@ -603,7 +603,7 @@ var overtempRule RuleFunc = func(stub shim.ChaincodeStubInterface, asset *Asset)
 		if temp > 45 {
 			RaiseAlert(asset, overtempAlert)
 			//create a new block with alert
-			UpdateAsset(stub1, args1, caller1, inject1)
+			asset.UpdateAsset(stub1, args1, caller1, inject1)
 		} else {
 			ClearAlert(asset, overtempAlert)
 		}
