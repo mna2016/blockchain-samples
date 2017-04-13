@@ -59,8 +59,6 @@ func (c AssetClass) NewAsset() Asset {
 
 // AllAssetClass is the class of all assets
 var AllAssetClass = AssetClass{"All", "", ""}
-
-UpdateAsset(stub shim.ChaincodeStubInterface, args []string, caller string, inject []QPropNV) ([]byte, error) {
 	
 stub1 shim.ChaincodeStubInterface
 args1 []string
