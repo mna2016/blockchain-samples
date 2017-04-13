@@ -212,9 +212,17 @@ func (c *AssetClass) ReplaceAsset(stub shim.ChaincodeStubInterface, args []strin
 	return a.PUTAsset(stub, caller, inject)
 }
 
+var stub1, args1, inject1, caller1;
+
 // UpdateAsset updates an asset and stores it in world state
 func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string, caller string, inject []QPropNV) ([]byte, error) {
 
+	stub1 = stub
+	args1 = args
+	inject1 = inject
+	caller1 = caller
+	
+	
 	var arg = c.NewAsset()
 	var a = c.NewAsset()
 
@@ -589,6 +597,8 @@ var overtempRule RuleFunc = func(stub shim.ChaincodeStubInterface, asset *Asset)
 //		if temp > 0 {
 		if temp > 45 {
 			RaiseAlert(asset, overtempAlert)
+			//create a new block with alert
+			UpdateAsset(stub1, args1, caller1, inject1)
 		} else {
 			ClearAlert(asset, overtempAlert)
 		}
