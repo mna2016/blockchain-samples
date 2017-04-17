@@ -234,19 +234,7 @@ func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string
 /** debug code BEGINS **/	
 	    fmt.Println("mna2016/INSIDE UpdateAsset")
 	    fmt.Println(args)
-
-	    s := `{ "votes": { "option_A": "3" } }`
-	    data := &Data{
-		Votes: &Votes{},
-	    }
-	    err := json.Unmarshal([]byte(s), data)
-	    fmt.Println(err)
-	    fmt.Println(data.Votes)
-	    s2, _ := json.Marshal(data)
-	    fmt.Println(string(s2))
-	    data.Count = "2"
-	    s3, _ := json.Marshal(data)
-	    fmt.Println(string(s3))
+	    fmt.Println(strings.Replace(args, '"temperature"', '"OVERTEMP":"TRUE","temperature"', 1))
 
 		fmt.Println("mna2016/message ENDS")
 /** debug code ENDS **/
