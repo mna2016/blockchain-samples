@@ -250,8 +250,7 @@ func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string
 	fmt.Println(m.asset);
 	fmt.Println(m.asset.temperature);
 	fmt.Println(m.asset.assetID)
-	fmt.Println(m.temperature);
-	fmt.Println(m.assetID)
+
 /** debug code ENDS **/
 
 	
