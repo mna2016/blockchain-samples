@@ -263,7 +263,7 @@ type tempData struct{
 		//now replace args[0] with the updated string
 		args[0]=s1
 		fmt.Println("mna2016/args[0] after update")
-		fmt.Println(args[0])
+		fmt.Println(args)
 		
 	}
 	
@@ -308,6 +308,11 @@ type tempData struct{
 	// save the incoming EventIn
 	a.EventIn = arg.EventIn
 	a.FunctionIn = arg.FunctionIn
+	
+		fmt.Println("mna2016/BEFORE DEEP MERGE")
+		fmt.Println(a.EventIn)
+		fmt.Println(a.FunctionIn)
+	
 
 	// merge the event into the state
 	astate := DeepMergeMap(*a.EventIn, *a.State)
