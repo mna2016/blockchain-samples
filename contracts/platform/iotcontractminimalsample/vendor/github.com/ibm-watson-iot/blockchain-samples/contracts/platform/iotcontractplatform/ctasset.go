@@ -222,14 +222,11 @@ func (c *AssetClass) ReplaceAsset(stub shim.ChaincodeStubInterface, args []strin
 
 
 
-type Data struct {
-    Votes *Votes `json:"votes"`
-    Count string `json:"count,omitempty"`
+type tempData struct {
+temperature          int    `json:"temperature"`			
 }
 
-type Votes struct {
-    OptionA string `json:"option_A"`
-}
+
 
 
 // UpdateAsset updates an asset and stores it in world state
@@ -241,8 +238,13 @@ func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string
 	    fmt.Println(strings.Replace(args[0], "\"temperature\"", "\"OVERTEMP\":\"TRUE\",\"temperature\"", 1))
 ///
 		fmt.Println("mna2016/message ENDS")
+	var m tempData
+	err := json.Unmarshal(args[0], &m)
+	fmt.Println("mna2016/temp reading")
+	fmt.Println(m.temperature)
 /** debug code ENDS **/
 
+	
 	
 	var arg = c.NewAsset()
 	var a = c.NewAsset()
