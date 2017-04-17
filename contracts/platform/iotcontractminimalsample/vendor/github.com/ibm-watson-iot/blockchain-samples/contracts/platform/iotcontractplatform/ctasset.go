@@ -253,7 +253,6 @@ func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string
 		return nil, err
 	}
 	fmt.Println("mna2016/arg.temperature")
-	fmt.Println(arg.temperature)
 	fmt.Println(arg)
 	
 	fmt.Println("mna2016/**")
