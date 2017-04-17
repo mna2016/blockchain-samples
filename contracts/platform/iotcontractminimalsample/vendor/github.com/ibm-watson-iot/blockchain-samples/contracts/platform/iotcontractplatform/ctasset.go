@@ -222,9 +222,14 @@ func (c *AssetClass) ReplaceAsset(stub shim.ChaincodeStubInterface, args []strin
 
 
 
-type tempData struct { "asset":{}
+type NestedElement struct{
+    temperature int `json:"temperature"`
+    assetID string `json:"assetID"`
 }
 
+type tempData struct {
+    NestedElement `json:"asset"`
+}
 
 
 
@@ -242,8 +247,9 @@ func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string
 	err := json.Unmarshal([]byte(args[0]), &m)
 	fmt.Println([]byte(args[0]));
 	fmt.Println("mna2016/temp reading")
-	fmt.Println(m.asset);
-	//fmt.Println(m.assetID)
+	fmt.Println(m.temperature);
+	fmt.Println(m.assetID)
+	
 /** debug code ENDS **/
 
 	
