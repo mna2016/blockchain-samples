@@ -239,7 +239,7 @@ func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string
 ///
 		fmt.Println("mna2016/message ENDS")
 	var m tempData
-	err := json.Unmarshal(args[0], &m)
+	err := json.Unmarshal([]byte(args[0]), &m)
 	fmt.Println("mna2016/temp reading")
 	fmt.Println(m.temperature)
 /** debug code ENDS **/
@@ -281,10 +281,7 @@ func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string
 		log.Errorf(err.Error())
 		return nil, err
 	}
-	fmt.Println("mna2016/arg.temperature BEGINS")
-	fmt.Println(a.EventIn.asset.temperature)
-	fmt.Println("mna2016/arg.temperature ENDS")
-	
+
 	
 	// save the incoming EventIn
 	a.EventIn = arg.EventIn
