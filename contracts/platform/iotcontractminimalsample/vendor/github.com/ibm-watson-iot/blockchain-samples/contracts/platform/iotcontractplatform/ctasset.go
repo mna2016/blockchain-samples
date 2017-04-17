@@ -228,7 +228,7 @@ type NestedElement struct{
 }
 
 type tempData struct {
-    NestedElement `json:"asset"`
+    asset NestedElement `json:"asset"`
 }
 
 
