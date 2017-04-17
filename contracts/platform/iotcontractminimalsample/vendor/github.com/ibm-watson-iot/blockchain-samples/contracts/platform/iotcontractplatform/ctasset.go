@@ -223,7 +223,7 @@ func (c *AssetClass) ReplaceAsset(stub shim.ChaincodeStubInterface, args []strin
 
 
 type tempData struct {
-temperature          int    `json:"temperature"`			
+temperature          string    `json:"temperature"`			
 }
 
 
