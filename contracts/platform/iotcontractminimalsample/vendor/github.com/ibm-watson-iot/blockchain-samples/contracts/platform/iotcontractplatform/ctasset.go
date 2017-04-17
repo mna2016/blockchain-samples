@@ -18,6 +18,10 @@ Kim Letkeman - Initial Contribution
 
 package iotcontractplatform
 
+ 	
+
+import strings "strings"
+
 import (
 	"encoding/json"
 	"fmt"
