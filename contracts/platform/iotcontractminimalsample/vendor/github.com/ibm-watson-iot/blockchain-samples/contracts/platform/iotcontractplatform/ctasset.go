@@ -260,6 +260,10 @@ type tempData struct{
 		fmt.Println(args[0])
 		fmt.Println("$replaced string is")
 		fmt.Println(s1)
+		//now replace args[0] with the updated string
+		args[0]=s1
+		fmt.Println("mna2016/args[0] after update")
+		fmt.Println(args[0])
 		
 	}
 	
