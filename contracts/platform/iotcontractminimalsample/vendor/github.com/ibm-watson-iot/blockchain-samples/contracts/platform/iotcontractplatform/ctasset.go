@@ -227,8 +227,9 @@ func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string
 
 type tempData struct{
 	asset struct{
-		temperature int `json:"temperature"`
 		assetID string `json:"assetID"`
+		temperature int `json:"temperature"`
+		
 			}
 }
 
