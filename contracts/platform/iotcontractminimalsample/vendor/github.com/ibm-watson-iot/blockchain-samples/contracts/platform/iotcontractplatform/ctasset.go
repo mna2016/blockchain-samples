@@ -222,6 +222,9 @@ func (c *AssetClass) ReplaceAsset(stub shim.ChaincodeStubInterface, args []strin
 
 
 
+// UpdateAsset updates an asset and stores it in world state
+func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string, caller string, inject []QPropNV) ([]byte, error) {
+
 type tempData struct{
 	asset struct{
 		temperature int `json:"temperature"`
@@ -230,11 +233,6 @@ type tempData struct{
 }
 
 
-
-
-// UpdateAsset updates an asset and stores it in world state
-func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string, caller string, inject []QPropNV) ([]byte, error) {
-	
 /** debug code BEGINS **/	
 	    fmt.Println("mna2016/INSIDE UpdateAsset")
 	    fmt.Println(args)
