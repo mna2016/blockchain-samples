@@ -20,7 +20,7 @@ package iotcontractplatform
 
  	
 
-import strings "strings"
+//import strings "strings"
 
 import (
 	"encoding/json"
@@ -233,13 +233,13 @@ temperature          int    `json:"temperature"`
 func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string, caller string, inject []QPropNV) ([]byte, error) {
 	
 /** debug code BEGINS **/	
-	    //fmt.Println("mna2016/INSIDE UpdateAsset")
-	    //fmt.Println(args)
+	    fmt.Println("mna2016/INSIDE UpdateAsset")
+	    fmt.Println(args)
 	   // fmt.Println(strings.Replace(args[0], "\"temperature\"", "\"OVERTEMP\":\"TRUE\",\"temperature\"", 1))
 ///
-		//fmt.Println("mna2016/message ENDS")
+		fmt.Println("mna2016/message ENDS")
 	var m tempData
-	err := json.Unmarshal([]byte(args), &m)
+	err := json.Unmarshal([]byte(args[0]), &m)
 	fmt.Println("mna2016/temp reading")
 	fmt.Println(m.temperature)
 /** debug code ENDS **/
