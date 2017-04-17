@@ -236,7 +236,7 @@ func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string
 	    fmt.Println(args)
 
 	    s := `{ "votes": { "option_A": "3" } }`
-	    data := &args{
+	    data := &Data{
 		Votes: &Votes{},
 	    }
 	    err := json.Unmarshal([]byte(s), data)
