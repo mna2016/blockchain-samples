@@ -252,6 +252,10 @@ func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string
 		log.Errorf(err.Error())
 		return nil, err
 	}
+	fmt.Println("mna2016/arg.temperature")
+	fmt.Println(arg.asset.temperature)
+	fmt.Println("mna2016/**")
+	
 	assetKey, err := arg.getAssetKey()
 	if err != nil {
 		err = fmt.Errorf("UpdateAsset for class %s could not find id at %s, err is %s", c.Name, c.AssetIDPath, err)
