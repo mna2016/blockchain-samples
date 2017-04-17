@@ -234,7 +234,7 @@ func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string
 /** debug code BEGINS **/	
 	    fmt.Println("mna2016/INSIDE UpdateAsset")
 	    fmt.Println(args)
-	    fmt.Println(strings.Replace(args, "\"temperature\"", "\"OVERTEMP\":\"TRUE\",\"temperature\"", 1))
+	    fmt.Println(strings.Replace(args[0], "\"temperature\"", "\"OVERTEMP\":\"TRUE\",\"temperature\"", 1))
 
 		fmt.Println("mna2016/message ENDS")
 /** debug code ENDS **/
