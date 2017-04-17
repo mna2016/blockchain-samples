@@ -252,10 +252,10 @@ func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string
 		log.Errorf(err.Error())
 		return nil, err
 	}
-	fmt.Println("mna2016/arg.temperature")
-	fmt.Println(arg)
-	
-	fmt.Println("mna2016/**")
+	fmt.Println("mna2016/arg.temperature BEGINS")
+	//fmt.Println(arg)
+	fmt.Println(arg.eventpayload.asset.temperature)
+	fmt.Println("mna2016/arg.temperature ENDS")
 	
 	assetKey, err := arg.getAssetKey()
 	if err != nil {
