@@ -136,6 +136,9 @@ func (a *Asset) PUTAsset(stub shim.ChaincodeStubInterface, caller string, inject
 // CreateAsset inializes a new asset and stores it in world state
 func (c *AssetClass) CreateAsset(stub shim.ChaincodeStubInterface, args []string, caller string, inject []QPropNV) ([]byte, error) {
 
+	fmt.Println("mna2016/INSIDE CreateAsset")
+	fmt.Println(args)
+	
 	var a = c.NewAsset()
 
 	if err := a.unmarshallEventIn(stub, args); err != nil {
@@ -217,6 +220,9 @@ func (c *AssetClass) ReplaceAsset(stub shim.ChaincodeStubInterface, args []strin
 // UpdateAsset updates an asset and stores it in world state
 func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string, caller string, inject []QPropNV) ([]byte, error) {
 
+	
+	fmt.Println("mna2016/INSIDE UpdateAsset")
+	fmt.Println(args)
 	
 	var arg = c.NewAsset()
 	var a = c.NewAsset()
