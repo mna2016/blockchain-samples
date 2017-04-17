@@ -235,26 +235,33 @@ type tempData struct{
 
 
 /** debug code BEGINS **/	
-	    fmt.Println("mna2016/INSIDE UpdateAsset")
-	    fmt.Println(args)
+//	    fmt.Println("mna2016/INSIDE UpdateAsset")
+//	    fmt.Println(args)
 	   // fmt.Println(strings.Replace(args[0], "\"temperature\"", "\"OVERTEMP\":\"TRUE\",\"temperature\"", 1))
 ///
-		fmt.Println("mna2016/message ENDS")
+//		fmt.Println("mna2016/message ENDS")
 	var m tempData
 	err := json.Unmarshal([]byte(args[0]), &m)
 	if err != nil {
 		fmt.Println("error:", err)
 	}
-	fmt.Println([]byte(args[0]));
+/*	fmt.Println([]byte(args[0]));
 	fmt.Println("mna2016/temp reading")
 	fmt.Println(args[0])
 	fmt.Println(m);
 	fmt.Println(m.Asset);
 	fmt.Println(m.Asset.Temperature);
 	fmt.Println(m.Asset.AssetID)
-
+*/
 /** debug code ENDS **/
-
+	if m.Asset.Temperature > 45 {
+		var s1 string 
+		s1 = strings.Replace(args[0], "\"temperature\"", "\"OVERTEMP\":\"TRUE\",\"temperature\"", 1)
+		fmt.Println(args[0])
+		fmt.Println("$replaced string is")
+		fmt.Println(s1)
+		
+	}
 	
 	
 	var arg = c.NewAsset()
