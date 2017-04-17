@@ -309,10 +309,7 @@ type tempData struct{
 	a.EventIn = arg.EventIn
 	a.FunctionIn = arg.FunctionIn
 	
-		fmt.Println("mna2016/BEFORE DEEP MERGE")
-		fmt.Println(a.EventIn)
-		fmt.Println(a.FunctionIn)
-	
+
 
 	// merge the event into the state
 	astate := DeepMergeMap(*a.EventIn, *a.State)
@@ -324,6 +321,13 @@ type tempData struct{
 		return nil, err
 	}
 
+		fmt.Println("mna2016/BEFORE PUT ")
+		fmt.Println(a.EventIn)
+		fmt.Println(a.FunctionIn)
+		fmt.Println(a.State)
+		fmt.Println(astate)
+	
+	
 	return a.PUTAsset(stub, caller, inject)
 }
 
