@@ -226,9 +226,9 @@ func (c *AssetClass) ReplaceAsset(stub shim.ChaincodeStubInterface, args []strin
 func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string, caller string, inject []QPropNV) ([]byte, error) {
 
 type tempData struct{
-	asset struct{
-		assetID string `json:"assetID"`
-		temperature int `json:"temperature"`
+	Asset struct{
+		AssetID string `json:"assetID"`
+		Temperature int `json:"temperature"`
 		
 			}
 }
@@ -249,9 +249,9 @@ type tempData struct{
 	fmt.Println("mna2016/temp reading")
 	fmt.Println(args[0])
 	fmt.Println(m);
-	fmt.Println(m.asset);
-	fmt.Println(m.asset.temperature);
-	fmt.Println(m.asset.assetID)
+	fmt.Println(m.Asset);
+	fmt.Println(m.Asset.Temperature);
+	fmt.Println(m.Asset.AssetID)
 
 /** debug code ENDS **/
 
