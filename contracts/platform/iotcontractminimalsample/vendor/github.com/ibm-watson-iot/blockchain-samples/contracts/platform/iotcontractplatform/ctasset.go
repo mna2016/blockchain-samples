@@ -234,8 +234,6 @@ type Votes struct {
 
 // UpdateAsset updates an asset and stores it in world state
 func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string, caller string, inject []QPropNV) ([]byte, error) {
-
-xA Asset;
 	
 /** debug code BEGINS **/	
 	    fmt.Println("mna2016/INSIDE UpdateAsset")
@@ -254,14 +252,6 @@ xA Asset;
 		log.Errorf(err.Error())
 		return nil, err
 	}
-	
-	err = json.Unmarshal([]byte(arg), &xA)	
-	fmt.Println(xA)
-	
-	fmt.Println("mna2016/arg.temperature BEGINS")
-	//fmt.Println(arg)
-	fmt.Println(arg.compliant)
-	fmt.Println("mna2016/arg.temperature ENDS")
 	
 	assetKey, err := arg.getAssetKey()
 	if err != nil {
@@ -289,6 +279,11 @@ xA Asset;
 		log.Errorf(err.Error())
 		return nil, err
 	}
+	fmt.Println("mna2016/arg.temperature BEGINS")
+	fmt.Println(a)
+	fmt.Println("mna2016/arg.temperature ENDS")
+	
+	
 	// save the incoming EventIn
 	a.EventIn = arg.EventIn
 	a.FunctionIn = arg.FunctionIn
