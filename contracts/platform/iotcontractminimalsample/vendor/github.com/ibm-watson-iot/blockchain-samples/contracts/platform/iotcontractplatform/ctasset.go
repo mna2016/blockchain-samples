@@ -223,7 +223,8 @@ func (c *AssetClass) ReplaceAsset(stub shim.ChaincodeStubInterface, args []strin
 
 
 type tempData struct {
-temperature          string    `json:"temperature"`			
+temperature          string    `json:"temperature"`
+assetID	     	     string    `json:"assetID"`
 }
 
 
@@ -243,6 +244,7 @@ func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string
 	fmt.Println([]byte(args[0]));
 	fmt.Println("mna2016/temp reading")
 	fmt.Println(m.temperature)
+	fmt.Println(m.assetID)
 /** debug code ENDS **/
 
 	
