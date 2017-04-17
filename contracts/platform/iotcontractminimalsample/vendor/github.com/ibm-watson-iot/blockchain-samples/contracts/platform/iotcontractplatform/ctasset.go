@@ -217,12 +217,40 @@ func (c *AssetClass) ReplaceAsset(stub shim.ChaincodeStubInterface, args []strin
 }
 
 
+
+type Data struct {
+    Votes *Votes `json:"votes"`
+    Count string `json:"count,omitempty"`
+}
+
+type Votes struct {
+    OptionA string `json:"option_A"`
+}
+
+
 // UpdateAsset updates an asset and stores it in world state
 func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string, caller string, inject []QPropNV) ([]byte, error) {
 
-	
-	fmt.Println("mna2016/INSIDE UpdateAsset")
-	fmt.Println(args)
+/** debug code BEGINS **/	
+	    fmt.Println("mna2016/INSIDE UpdateAsset")
+	    fmt.Println(args)
+
+	    s := `{ "votes": { "option_A": "3" } }`
+	    data := &args{
+		Votes: &Votes{},
+	    }
+	    err := json.Unmarshal([]byte(s), data)
+	    fmt.Println(err)
+	    fmt.Println(data.Votes)
+	    s2, _ := json.Marshal(data)
+	    fmt.Println(string(s2))
+	    data.Count = "2"
+	    s3, _ := json.Marshal(data)
+	    fmt.Println(string(s3))
+
+		fmt.Println("mna2016/message ENDS")
+/** debug code ENDS **/
+
 	
 	var arg = c.NewAsset()
 	var a = c.NewAsset()
