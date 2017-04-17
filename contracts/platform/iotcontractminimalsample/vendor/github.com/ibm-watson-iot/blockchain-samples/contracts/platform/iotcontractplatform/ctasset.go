@@ -240,6 +240,7 @@ func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string
 		fmt.Println("mna2016/message ENDS")
 	var m tempData
 	err := json.Unmarshal([]byte(args[0]), &m)
+	fmt.Println([]byte(args[0]));
 	fmt.Println("mna2016/temp reading")
 	fmt.Println(m.temperature)
 /** debug code ENDS **/
