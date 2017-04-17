@@ -280,7 +280,7 @@ func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string
 		return nil, err
 	}
 	fmt.Println("mna2016/arg.temperature BEGINS")
-	fmt.Println(a)
+	fmt.Println(a.EventIn.asset.temperature)
 	fmt.Println("mna2016/arg.temperature ENDS")
 	
 	
