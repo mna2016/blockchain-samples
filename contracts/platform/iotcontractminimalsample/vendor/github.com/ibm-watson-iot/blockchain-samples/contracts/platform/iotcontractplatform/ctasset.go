@@ -20,7 +20,7 @@ package iotcontractplatform
 
  	
 
-//import strings "strings"
+import strings "strings"
 
 import (
 	"encoding/json"
