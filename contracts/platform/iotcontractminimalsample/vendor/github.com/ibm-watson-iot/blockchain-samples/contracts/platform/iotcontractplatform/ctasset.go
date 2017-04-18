@@ -277,7 +277,7 @@ type tempData struct{
 		return nil, err
 	}
 	
-	fmt.Println("mna2016/value of arg after unmarshallEventIn is:)
+	fmt.Println("mna2016/value of arg after unmarshallEventIn is:')
 	fmt.Println(arg)
 	
 	assetKey, err := arg.getAssetKey()
