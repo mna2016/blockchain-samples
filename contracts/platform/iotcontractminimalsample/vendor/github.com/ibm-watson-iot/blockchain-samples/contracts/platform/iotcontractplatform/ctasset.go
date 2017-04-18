@@ -234,7 +234,6 @@ type tempData struct{
 }
 
 	var m tempData
-	var bytes []byte
 	err := json.Unmarshal([]byte(args[0]), &m)
 	if err != nil {
 		fmt.Println("error:", err)
