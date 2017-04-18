@@ -330,11 +330,7 @@ type tempData struct{
 		fmt.Println(a.State)
 		fmt.Println(astate)
 		    
-		    a.State = a.State + "TEST:01"
-	
-		    var s2 string 
-		    s2 = strings.Replace(a.State, "]]", "TEST:01]]", 1)
-		    a.State = s2
+		 
 	
 	return a.PUTAsset(stub, caller, inject)
 }
