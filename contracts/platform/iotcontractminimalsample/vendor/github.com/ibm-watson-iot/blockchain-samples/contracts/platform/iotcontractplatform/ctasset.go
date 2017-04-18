@@ -226,7 +226,7 @@ func (c *AssetClass) ReplaceAsset(stub shim.ChaincodeStubInterface, args []strin
 func (c *AssetClass) UpdateAsset(stub shim.ChaincodeStubInterface, args []string, caller string, inject []QPropNV) ([]byte, error) {
 
 type tempData struct{
-	Asset struct `json:"asset"`{
+	Asset struct {
 		AssetID string `json:"assetID"`
 		Temperature int `json:"temperature"`
 		
@@ -285,7 +285,7 @@ type tempData struct{
 	
 	fmt.Println("mna2016/value of arg after unmarshallEventIn is:")
 	fmt.Println(arg)
-	
+	c.AssetIDPath = "Asset.assetID"
 	assetKey, err := arg.getAssetKey()
 	if err != nil {
 		err = fmt.Errorf("UpdateAsset for class %s could not find id at %s, err is %s", c.Name, c.AssetIDPath, err)
