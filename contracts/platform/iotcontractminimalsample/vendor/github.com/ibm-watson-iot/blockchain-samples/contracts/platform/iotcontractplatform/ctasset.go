@@ -20,7 +20,7 @@ package iotcontractplatform
 
  	
 
-//import strings "strings"
+import strings "strings"
 
 import (
 	"encoding/json"
@@ -233,29 +233,21 @@ type tempData struct{
 			}
 }
 
-
-/** debug code BEGINS **/	
-//	    fmt.Println("mna2016/INSIDE UpdateAsset")
-//	    fmt.Println(args)
-	   // fmt.Println(strings.Replace(args[0], "\"temperature\"", "\"OVERTEMP\":\"TRUE\",\"temperature\"", 1))
-///
-//		fmt.Println("mna2016/message ENDS")
 	var m tempData
 	var bytes []byte
 	err := json.Unmarshal([]byte(args[0]), &m)
 	if err != nil {
 		fmt.Println("error:", err)
 	}
-/*	fmt.Println([]byte(args[0]));
+	fmt.Println([]byte(args[0]));
 	fmt.Println("mna2016/temp reading")
 	fmt.Println(args[0])
 	fmt.Println(m);
 	fmt.Println(m.Asset);
 	fmt.Println(m.Asset.Temperature);
 	fmt.Println(m.Asset.AssetID)
-*/
-/** debug code ENDS **/
-/*	if m.Asset.Temperature > 45 {
+
+	if m.Asset.Temperature > 45 {
 		var s1 string 
 		s1 = strings.Replace(args[0], "\"temperature\"", "\"OVERTEMP\":\"TRUE\",\"temperature\"", 1)
 		fmt.Println(args[0])
@@ -267,8 +259,8 @@ type tempData struct{
 		fmt.Println(args)
 		
 	}
+
 	
-*/	
 	var arg = c.NewAsset()
 	var a = c.NewAsset()
 
@@ -278,8 +270,8 @@ type tempData struct{
 		return nil, err
 	}
 	
-	fmt.Println("mna2016/value of arg after unmarshallEventIn is:")
-	fmt.Println(arg)
+	//fmt.Println("mna2016/value of arg after unmarshallEventIn is:")
+	//fmt.Println(arg)
 	
 	assetKey, err := arg.getAssetKey()
 	if err != nil {
@@ -314,7 +306,6 @@ type tempData struct{
 	a.FunctionIn = arg.FunctionIn
 	
 
-
 	// merge the event into the state
 	astate := DeepMergeMap(*a.EventIn, *a.State)
 	a.State = &astate
@@ -325,14 +316,12 @@ type tempData struct{
 		return nil, err
 	}
 
-		fmt.Println("mna2016/BEFORE PUT ")
+	/*	fmt.Println("mna2016/BEFORE PUT ")
 		fmt.Println(a.EventIn)
 		fmt.Println(a.FunctionIn)
 		fmt.Println(a.State)
 		fmt.Println(astate)
-		    
-		 
-	
+	*/	    
 	return a.PUTAsset(stub, caller, inject)
 }
 
