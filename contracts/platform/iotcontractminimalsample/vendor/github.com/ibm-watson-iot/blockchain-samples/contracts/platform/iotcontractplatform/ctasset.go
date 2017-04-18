@@ -241,7 +241,7 @@ type tempData struct{
 ///
 //		fmt.Println("mna2016/message ENDS")
 	var m tempData
-	var bytes
+	var bytes []byte
 	err := json.Unmarshal([]byte(args[0]), &m)
 	if err != nil {
 		fmt.Println("error:", err)
