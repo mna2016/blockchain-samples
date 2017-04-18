@@ -277,6 +277,9 @@ type tempData struct{
 		return nil, err
 	}
 	
+	fmt.Println("mna2016/value of arg after unmarshallEventIn is:)
+	fmt.Println(arg)
+	
 	assetKey, err := arg.getAssetKey()
 	if err != nil {
 		err = fmt.Errorf("UpdateAsset for class %s could not find id at %s, err is %s", c.Name, c.AssetIDPath, err)
@@ -326,7 +329,12 @@ type tempData struct{
 		fmt.Println(a.FunctionIn)
 		fmt.Println(a.State)
 		fmt.Println(astate)
+		    
+		    a.State = a.State + "TEST:01"
 	
+		    var s2 string 
+		    s2 = strings.Replace(a.State, "]]", "TEST:01]]", 1)
+		    a.State = s2
 	
 	return a.PUTAsset(stub, caller, inject)
 }
