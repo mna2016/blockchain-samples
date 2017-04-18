@@ -246,9 +246,11 @@ type tempData struct{
 	if err != nil {
 		fmt.Println("error:", err)
 	}
-	m.Asset.Temperature = 199
+	m.Asset.Temperature = 66
 	bytes, err = json.Marshal(m)
 	args[0] = string(bytes)
+	fmt.Println("mna2016/after marshall")
+	fmt.Println(args[0])
 /*	fmt.Println([]byte(args[0]));
 	fmt.Println("mna2016/temp reading")
 	fmt.Println(args[0])
@@ -270,8 +272,8 @@ type tempData struct{
 		fmt.Println(args)
 		
 	}
-	*/
 	
+*/	
 	var arg = c.NewAsset()
 	var a = c.NewAsset()
 
