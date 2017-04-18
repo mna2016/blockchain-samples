@@ -246,11 +246,6 @@ type tempData struct{
 	if err != nil {
 		fmt.Println("error:", err)
 	}
-	m.Asset.Temperature = 66
-	bytes, err = json.Marshal(m)
-	args[0] = string(bytes)
-	fmt.Println("mna2016/after marshall")
-	fmt.Println(args[0])
 /*	fmt.Println([]byte(args[0]));
 	fmt.Println("mna2016/temp reading")
 	fmt.Println(args[0])
@@ -285,7 +280,7 @@ type tempData struct{
 	
 	fmt.Println("mna2016/value of arg after unmarshallEventIn is:")
 	fmt.Println(arg)
-	c.AssetIDPath = "Asset.assetID"
+	
 	assetKey, err := arg.getAssetKey()
 	if err != nil {
 		err = fmt.Errorf("UpdateAsset for class %s could not find id at %s, err is %s", c.Name, c.AssetIDPath, err)
