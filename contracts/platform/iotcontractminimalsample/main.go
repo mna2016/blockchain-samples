@@ -18,7 +18,11 @@ Kim Letkeman - Initial Contribution
 
 package main
 
+import strings "strings"
+
 import (
+	"encoding/json"
+	"fmt"
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 	iot "github.com/ibm-watson-iot/blockchain-samples/contracts/platform/iotcontractplatform"
 )
