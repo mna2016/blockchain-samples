@@ -55,6 +55,8 @@ func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface, function string
 
 // Invoke is called in invoke mode and calls the router's Invoke function
 func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function string, args []string) ([]byte, error) {
+	iot.Invoke(stub, function, args)
+	
 	fmt.Println("mna2016/Invoke called");
 	
 	type tempData struct{
@@ -77,6 +79,7 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function stri
 	fmt.Println(m.Asset);
 	fmt.Println(m.Asset.Temperature);
 	fmt.Println(m.Asset.AssetID)
+	m.Asset.AssetID = "ID98765"
 
 	if m.Asset.Temperature > 45 {
 		var s1 string 
@@ -93,7 +96,7 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function stri
 	fmt.Println(args)
 	fmt.Println("mna2016/about to call iot.invoke")
 	
-	iot.Invoke(stub, function, args)
+	
 	return iot.Invoke(stub, function, args)
 }
 
