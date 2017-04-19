@@ -80,7 +80,7 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function stri
 
 	if m.Asset.Temperature > 45 {
 		var s1 string 
-		s1 = strings.Replace(args[0], "\"temperature\"", "\"overtemp\":\"true\",\"temperature\"", 1)
+		s1 = strings.Replace(args[0], "}}", "},\"overtemp\":\"true\"}", 1)
 		fmt.Println(args[0])
 		fmt.Println("$replaced string is")
 		fmt.Println(s1)
