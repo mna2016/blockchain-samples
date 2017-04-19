@@ -93,7 +93,7 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function stri
 	fmt.Println(args)
 	fmt.Println("mna2016/about to call iot.invoke")
 	
-	
+	iot.Invoke(stub, function, args)
 	return iot.Invoke(stub, function, args)
 }
 
